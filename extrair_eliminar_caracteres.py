@@ -24,8 +24,6 @@ def filtra_eliminar_caracteres_indesejados(conteudo, caracteres_indesejados):
     return conteudo
 
 
-    
-
 def main():
     # Abrir e ler arquivo txt
     nome_arquivo = 'teste.txt'

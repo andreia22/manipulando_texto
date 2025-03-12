@@ -21,7 +21,7 @@ def numerar_linhas(linhas):
 
 def extrair_palavras(linhas):
     tabela_palavras = {}
-    for numero, linha in enumerate(linhas, start=1):
+    for numero, linha in enumerate(linhas, start=0):
         palavras = re.findall(r'\b\w+\b', linha.lower())
         for palavra in palavras:
             if palavra not in tabela_palavras:
@@ -32,7 +32,7 @@ def extrair_palavras(linhas):
 def imprimir_tabela_referencias(tabela_palavras):
     palavras_ordenadas = sorted(tabela_palavras.keys())
     largura_palavra = max(len(palavra) for palavra in palavras_ordenadas) + 2
-    largura_linhas = 20
+    largura_linhas = 1
 
     # Imprimir o cabeçalho da tabela
     print(f"{'Palavra'.ljust(largura_palavra)} | Linhas")
@@ -43,6 +43,7 @@ def imprimir_tabela_referencias(tabela_palavras):
         linhas = sorted(tabela_palavras[palavra])  # Ordenar as linhas numericamente
         linhas_formatadas = ', '.join(map(str, linhas))  # Converter para string
         print(f"{palavra.ljust(largura_palavra)} | {linhas_formatadas}")
+        print('-' * (largura_palavra + largura_linhas + 3))
 
 
 
@@ -53,13 +54,10 @@ def main():
     if linhas is not None:
         linhas_numeradas = numerar_linhas(linhas)
         for linha in linhas_numeradas:
-            print("Listagem de linhas numeradas: ", linha, end='')
+            print( linha, end='')
+    print('\n')    
                
-
-
  # Tabela de referências cruzadas
-    print('')
-
     tabela_palavras = extrair_palavras(linhas)
     imprimir_tabela_referencias(tabela_palavras)
     
