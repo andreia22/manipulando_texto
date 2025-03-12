@@ -1,0 +1,4 @@
+Olá, mundo
+Este é um teste.
+Python é incrível.
+Teste, teste, 1, 2, 3. 
