@@ -16,12 +16,12 @@ def abrir_ler( nome_arquivo):
 def numerar_linhas(linhas):   
     linhas_numeradas = []
     for numero, linha in enumerate(linhas, start=1):
-        linhas_numeradas.append ((f"{numero} - {linha}") )
+        linhas_numeradas.append ((f"{numero} - {linha}"))
     return linhas_numeradas 
 
 def extrair_palavras(linhas):
     tabela_palavras = {}
-    for numero, linha in enumerate(linhas, start=0):
+    for numero, linha in enumerate(linhas, start=1):
         palavras = re.findall(r'\b\w+\b', linha.lower())
         for palavra in palavras:
             if palavra not in tabela_palavras:
@@ -33,18 +33,15 @@ def imprimir_tabela_referencias(tabela_palavras):
     palavras_ordenadas = sorted(tabela_palavras.keys())
     largura_palavra = max(len(palavra) for palavra in palavras_ordenadas) + 2
     largura_linhas = 1
-
     # Imprimir o cabeçalho da tabela
     print(f"{'Palavra'.ljust(largura_palavra)} | Linhas")
     print('-' * (largura_palavra + largura_linhas + 3))
-
     # Imprimir cada palavra e as linhas em que ocorreu
     for palavra in palavras_ordenadas:
-        linhas = sorted(tabela_palavras[palavra])  # Ordenar as linhas numericamente
-        linhas_formatadas = ', '.join(map(str, linhas))  # Converter para string
+        linhas = sorted(tabela_palavras[palavra])  
+        linhas_formatadas = ', '.join(map(str, linhas)) 
         print(f"{palavra.ljust(largura_palavra)} | {linhas_formatadas}")
         print('-' * (largura_palavra + largura_linhas + 3))
-
 
 
 def main():
