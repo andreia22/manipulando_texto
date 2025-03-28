@@ -1,0 +1,47 @@
+[
+    {
+        "simbolo": "__doc__",
+        "tipo": "documentacao",
+        "descricao": "String de documenta\u00e7\u00e3o"
+    },
+    {
+        "simbolo": "__name__",
+        "tipo": "especial",
+        "descricao": "Nome do m\u00f3dulo"
+    },
+    {
+        "simbolo": "class",
+        "tipo": "definicao",
+        "descricao": "Definir classe"
+    },
+    {
+        "simbolo": "def",
+        "tipo": "definicao",
+        "descricao": "Definir fun\u00e7\u00e3o"
+    },
+    {
+        "simbolo": "if",
+        "tipo": "controle",
+        "descricao": "Condicional se"
+    },
+    {
+        "simbolo": "import",
+        "tipo": "modulo",
+        "descricao": "Importar m\u00f3dulo"
+    },
+    {
+        "simbolo": "len()",
+        "tipo": "analise",
+        "descricao": "Retorna tamanho"
+    },
+    {
+        "simbolo": "print()",
+        "tipo": "saida",
+        "descricao": "Imprime na tela"
+    },
+    {
+        "simbolo": "range()",
+        "tipo": "sequencia",
+        "descricao": "Gera sequ\u00eancia"
+    }
+]
