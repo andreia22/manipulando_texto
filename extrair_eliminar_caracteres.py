@@ -13,10 +13,13 @@ def abrir_ler_arquivo(nome_arquivo):
 def extrair_caracteres_ascii(nome_arquivo):
     conteudo = abrir_ler_arquivo(nome_arquivo)
     caracteres_ascii = []
+   
     for caractere in conteudo:
-        valor_ascii = ord(caractere)
-        caracteres_ascii.append(valor_ascii)
-    return caracteres_ascii    
+        caracteres_ascii.append({
+            'caractere': caractere,
+            'ascii': ord(caractere)
+        })
+    return caracteres_ascii
 
 def filtra_eliminar_caracteres_indesejados(conteudo, caracteres_indesejados):
     for caractere in caracteres_indesejados:
@@ -32,8 +35,10 @@ def main():
         print("Está escrito: ", conteudo)
 
     # Extrair caracteres ascii
-    print("Os caracteres ascii correspondentes são: ", extrair_caracteres_ascii(nome_arquivo))    
-
+    resultado = extrair_caracteres_ascii('teste.txt')
+    for item in resultado:
+      print(f"Caractere: '{item['caractere']}' - ASCII: {item['ascii']}")
+      
     # filtra e elimina caracteres indesejados
     caracteres_indesejados = [' ', '\t', '\n', '\r', '\x0b', '\x0c']
     conteudo_filtrado = filtra_eliminar_caracteres_indesejados(conteudo, caracteres_indesejados)
