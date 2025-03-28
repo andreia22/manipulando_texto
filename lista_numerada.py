@@ -35,13 +35,13 @@ def imprimir_tabela_referencias(tabela_palavras):
     largura_linhas = 1
     # Imprimir o cabeçalho da tabela
     print(f"{'Palavra'.ljust(largura_palavra)} | Linhas")
-    print('-' * (largura_palavra + largura_linhas + 3))
+    print('-' * (largura_palavra + largura_linhas + 9))
     # Imprimir cada palavra e as linhas em que ocorreu
     for palavra in palavras_ordenadas:
         linhas = sorted(tabela_palavras[palavra])  
         linhas_formatadas = ', '.join(map(str, linhas)) 
         print(f"{palavra.ljust(largura_palavra)} | {linhas_formatadas}")
-        print('-' * (largura_palavra + largura_linhas + 3))
+        print('-' * (largura_palavra + largura_linhas + 6))
 
 
 def main():
